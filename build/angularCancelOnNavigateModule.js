@@ -23,7 +23,9 @@ angular.module('angularCancelOnNavigateModule')
 
     function newTimeout() {
       var cancelPromise = $q.defer();
-      cancelPromises.push(cancelPromise);
+      setTimeout(function() {
+        cancelPromises.push(cancelPromise);
+      },0);
       return cancelPromise.promise;
     }
 
